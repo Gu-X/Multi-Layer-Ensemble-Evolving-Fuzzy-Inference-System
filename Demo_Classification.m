@@ -23,7 +23,7 @@ Setting.ForgettingFactor=0; % Forgettingfactor.
 Dataset.training=X_training; % Training data.
 Dataset.traininglabels=full(ind2vec(Y_training')'); % Ground truth.
 Dataset.testing=X_testing; % Testing data.
-[Output]=MEEFIS(Dataset,Setting); %% run meefis
+[Output]=MEEFIS(Dataset,Setting); %% Run meefis
 [~,Output]=max(Output.Ye,[],2); % Get the estimated output
 confusionmat(Y_testing,Output) % confusion matrix
 sum(sum(confusionmat(Y_testing,Output).*eye(length(unique(Y_testing)))))/length(Y_testing) % classification accuracy
