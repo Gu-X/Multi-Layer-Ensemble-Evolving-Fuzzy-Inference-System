@@ -9,7 +9,7 @@
 function [Output]=MEEFIS(Dataset,Setting)
 Layer=Setting.Layer;
 Epoch=Setting.Epoch;
-FF=Setting.FogettingFactor;
+FF=Setting.ForgettingFactor;
 data0=Dataset.training;
 Y0=Dataset.traininglabels;
 data1=Dataset.testing;
