@@ -7,12 +7,14 @@ load ExampleDataset_classification % load the example
 %% Define the interconnections between different layers (this is only an example used in the paper).
 L=length(X_training(1,:));
 seq=[1:1:L,1:1:L];
-for tt=1:1:4
-    ii=(tt-1)*floor(L/4)+1;
-    Layer{1}(tt,:)=seq(ii:1:ii+ceil(L/2)-1);
+count=1;
+for kk=1:1:4
+    ii=(kk-1)*floor(L/4)+1;
+    Layer{1}(count,:)=seq(ii:1:ii+ceil(L/2)-1);
+    count=count+1;
 end
 seq2=[1:1:length(Layer{1}(:,1)),1:1:length(Layer{1}(:,1))];
-for ii=1:1:numElems2
+for ii=1:1:4
     Layer{2}(ii,:)=seq2(ii:1:ii+length(Layer{1}(:,1))-2);
 end
 Layer{3}=[1:1:length(Layer{1}(:,1))];
