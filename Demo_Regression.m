@@ -12,7 +12,7 @@ for tt=1:1:4
     Layer{1}(tt,:)=seq(ii:1:ii+ceil(L/2)-1);
 end
 seq2=[1:1:length(Layer{1}(:,1)),1:1:length(Layer{1}(:,1))];
-for ii=1:1:numElems2
+for ii=1:1:4
     Layer{2}(ii,:)=seq2(ii:1:ii+length(Layer{1}(:,1))-2);
 end
 Layer{3}=[1:1:length(Layer{1}(:,1))];
